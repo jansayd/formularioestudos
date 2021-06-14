@@ -29,4 +29,6 @@ function isLogged()
     if ($_SESSION['logado'] != true) {
         return false;
     }
+
+    return true;
 }
