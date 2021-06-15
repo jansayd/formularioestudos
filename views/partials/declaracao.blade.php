@@ -89,7 +89,8 @@
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-success">Cadastrar</button>
+                    <button type="button" class="btn btn-success btnPrevious">Anterior</button>
+                    <button type="button" class="btn btn-success btnNext">Próximo</button>
                 </div>
             </div>
         </form>

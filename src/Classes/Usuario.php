@@ -165,4 +165,12 @@ class Usuario
         }
         return false;
     }
+
+    /**
+     * @return bool
+     */
+    public function isLoggedIn()
+    {
+        return array_key_exists('logado', $_SESSION) && $_SESSION['logado'];
+    }
 }

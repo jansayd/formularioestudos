@@ -14,4 +14,9 @@ $oncologico = (new Combobox())->simNao('oncologico', 'N');
 $cronico    = (new Combobox())->simNao('cronico', 'N');
 $deficiente = (new Combobox())->simNao('deficiente', 'N');
 
-echo $blade->run("forms.index", compact('ufs', 'genero', 'oncologico', 'cronico', 'deficiente'));
+$oncologico_dep = (new Combobox())->simNao('oncologico_dep', 'N');
+$cronico_dep    = (new Combobox())->simNao('cronico_dep', 'N');
+$deficiente_dep = (new Combobox())->simNao('deficiente_dep', 'N');
+
+echo $blade->run("forms.index",
+    compact('ufs', 'genero', 'oncologico', 'cronico', 'deficiente', 'oncologico_dep', 'cronico_dep', 'deficiente_dep'));
