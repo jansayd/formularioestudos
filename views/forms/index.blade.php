@@ -22,13 +22,18 @@
         $(document).ready(function () {
             $("#cep").inputmask("99999-999").on('blur', function (data) {
                 getCep(data.target.value);
-            });  //static mask
+            });
             $("#cpf").inputmask("999.999.999-99");
             $(".date").inputmask("99/99/9999");
             $(".phone").inputmask({
                 mask: ["(99) 9999-9999", "(99) 99999-9999"]
             });
             $('.currency').maskMoney();
+
+            $('#deficiente').on('change', function (evt) {
+                let status = evt.target.value === 'N' ? true : false;
+                $('#tipodeficiente').prop('disabled', status)
+            });
         });
 
 

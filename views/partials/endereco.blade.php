@@ -37,7 +37,7 @@
             <div class="form-group">
                 <label class="col-sm-2 control-label">Estado</label>
                 <div class="col-sm-10">
-                    <input type="text" name="estado" class="form-control" id="uf" placeholder="estado">
+                    {!! $ufs !!}
                 </div>
             </div>
             <div class="form-group">

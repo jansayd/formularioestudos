@@ -11,7 +11,7 @@
             <div class="form-group">
                 <label class="col-sm-2 control-label">Genero</label>
                 <div class="col-sm-10">
-                    <input type="text" name='genero' class="form-control" id="genero" placeholder="genero">
+                    {!! $genero !!}
                 </div>
             </div>
             <div class="form-group">
@@ -65,29 +65,26 @@
             <div class="form-group">
                 <label class="col-sm-2 control-label">Oncológico</label>
                 <div class="col-sm-10">
-                    <input type="text" name='oncologico' class="form-control" id="oncologico"
-                           placeholder="Paciente Oncológico">
+                    {!! $oncologico !!}
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-sm-2 control-label">Doença Crônica</label>
                 <div class="col-sm-10">
-                    <input type="text" name='cronico' class="form-control" id="cronico"
-                           placeholder="Paciente Crônico ">
+                    {!! $cronico !!}
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-sm-2 control-label">Deficiente</label>
                 <div class="col-sm-10">
-                    <input type="text" name='deficiente' class="form-control" id="deficiente"
-                           placeholder="Deficiente">
+                    {!! $deficiente !!}
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-sm-2 control-label">Tipo de Deficiencia</label>
                 <div class="col-sm-10">
                     <input type="text" name='tipodeficiente' class="form-control" id="tipodeficiente"
-                           placeholder="Tipo de Deficiente">
+                           placeholder="Tipo de Deficiente" disabled>
                 </div>
             </div>
             <div class="form-group">
