@@ -9,18 +9,11 @@
 </head>
 <body>
 
-<div class="container theme-showcase" role="main">
-    <div class="page-header">
-        <h1>@yield('title')</h1>
-    </div>
-    <div class="row espaco">
-        <div class="pull-right">
-            <a href="../destroi_sessao.php">
-                <button type='button' class='btn btn-sm btn-success'>Novo Usuário</button>
-            </a>
-        </div>
-    </div>
+@include('layout.navbar')
 
+<div class="container-fluid " role="main">
+    <h3>@yield('title')</h3>
+    <div class="alert hide" id="msg" role="alert">...</div>
     @yield('content')
 
 </div>

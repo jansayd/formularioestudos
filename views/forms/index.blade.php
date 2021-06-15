@@ -5,7 +5,7 @@
 @section('content')
     <div>
         <!-- Nav tabs -->
-    @include('partials.navbar')
+    @include('partials.tabs')
 
     <!-- Tab panes -->
         <div class="tab-content">
@@ -48,11 +48,15 @@
                 saveDependente();
             });
 
-            $('.btnNext').click(function(){
+            $('#btn_save_cadastro').on('click', function () {
+                saveCadastro();
+            });
+
+            $('.btnNext').click(function () {
                 $('.nav-tabs > .active').next('li').find('a').trigger('click');
             });
 
-            $('.btnPrevious').click(function(){
+            $('.btnPrevious').click(function () {
                 $('.nav-tabs > .active').prev('li').find('a').trigger('click');
             });
 
@@ -99,6 +103,26 @@
             });
         }
 
+        function saveCadastro() {
+            $('#msg').removeClass('alert-success').removeClass('alert-danger').addClass('hide');
+
+            $.ajax({
+                type: "POST",
+                url: "../ajax/ajax.php?action=save-cadastro",
+                data: $('#frm-dadospessoais, #frm-declaracao, #frm-endereco').serialize(),
+                dataType: 'json',
+                success: function (ret) {
+                    getDependentes();
+
+                    if (ret.success) {
+                        $('#msg').addClass('alert-success').removeClass('hide').html(ret.mensagem);
+                    } else {
+                        $('#msg').addClass('alert-danger').removeClass('hide').html(ret.mensagem);
+                    }
+                },
+            });
+        }
+
         function saveDependente() {
             $.ajax({
                 type: "POST",
@@ -114,7 +138,8 @@
         }
 
         function clearDependenteForm() {
-            $('#parentesco, #nome_dep, #cpf_dep, #data_dep, #renda_dep, #oncologico_dep, #cronico_dep, #deficiente_dep, #tipodeficiente_dep').val('');
+            $('#parentesco, #nome_dep, #cpf_dep, #data_dep, #renda_dep, #tipodeficiente_dep').val('');
+            $('#oncologico_dep, #cronico_dep, #deficiente_dep').val('N');
         }
     </script>
 @endsection

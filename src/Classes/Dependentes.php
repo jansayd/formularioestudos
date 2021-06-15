@@ -2,23 +2,26 @@
 
 namespace App\Classes;
 
+use App\Classes\Model\DefaultModel;
 use PDO;
 
 /**
  * Class Usuario
  * @package App\Classes
  */
-class Dependentes
+class Dependentes extends DefaultModel
 {
     public $parentesco;
-    public $nome_dep;
-    public $cpf_dep;
-    public $data_dep;
-    public $renda_dep;
-    public $oncologico_dep;
-    public $cronico_dep;
-    public $deficiente_dep;
-    public $tipodeficiente_dep;
+    public $id;
+    public $cidadao_id;
+    public $nome;
+    public $cpf;
+    public $data;
+    public $renda;
+    public $oncologico;
+    public $cronico;
+    public $deficiente;
+    public $tipodeficiente;
 
     /**
      * @param array $data
@@ -89,5 +92,28 @@ EOL;
         if (array_key_exists($unique, $_SESSION['dependentes'])) {
             unset($_SESSION['dependentes'][$unique]);
         }
+    }
+
+    /**
+     * @return mixed
+     */
+    public function save()
+    {
+        $stmt = DB::prepare("INSERT INTO dependentes(cidadao_id, parentesco, nome, cpf, data, renda, oncologico, cronico, deficiente, tipodeficiente) values(:cidadao_id, :parentesco, :nome, :cpf, :data, :renda, :oncologico, :cronico, :deficiente, :tipodeficiente)");
+
+        $stmt->bindValue(":cidadao_id", $this->cidadao_id, PDO::PARAM_STR);
+        $stmt->bindValue(":parentesco", $this->parentesco, PDO::PARAM_STR);
+        $stmt->bindValue(":nome", $this->nome, PDO::PARAM_STR);
+        $stmt->bindValue(":cpf", $this->cpf, PDO::PARAM_STR);
+        $stmt->bindValue(":data", $this->data, PDO::PARAM_STR);
+        $stmt->bindValue(":renda", $this->renda, PDO::PARAM_STR);
+        $stmt->bindValue(":oncologico", $this->oncologico, PDO::PARAM_STR);
+        $stmt->bindValue(":cronico", $this->cronico, PDO::PARAM_STR);
+        $stmt->bindValue(":deficiente", $this->deficiente, PDO::PARAM_STR);
+        $stmt->bindValue(":tipodeficiente", $this->tipodeficiente, PDO::PARAM_STR);
+
+        $stmt->execute();
+
+        return DB::lastInsertId();
     }
 }

@@ -10,10 +10,11 @@
                 <div class='col-md-12' style="margin-bottom: 20px">
                     <div id="dependentes-list"></div>
                 </div>
-                <div class="form-group">
-                    <div class="col-sm-12 text-right">
-                        <button type="button" class="btn btn-success">Cadastrar</button>
-                    </div>
+            </div>
+            <div class="row">
+                <div class='col-md-12  text-right' style="margin-bottom: 20px">
+                    <button type="button" class="btn btn-success" id="btn_save_cadastro">Cadastrar</button>
+
                 </div>
             </div>
 

@@ -1,6 +1,6 @@
 <div role="tabpanel" class="tab-pane" id="endereco">
     <div style="padding-top:20px;">
-        <form class="form-horizontal" action="" method="POST">
+        <form class="form-horizontal" action="" id="frm-endereco" method="POST">
             <div class="form-group">
                 <label class="col-sm-2 control-label">CEP</label>
                 <div class="col-sm-10">
@@ -11,7 +11,7 @@
             <div class="form-group">
                 <label class="col-sm-2 control-label">Logradouro</label>
                 <div class="col-sm-10">
-                    <input type="text" name="endereco" id="logradouro" class="form-control"
+                    <input type="text" name="logradouro" id="logradouro" class="form-control"
                            placeholder="Endereço">
                 </div>
             </div>
@@ -31,7 +31,7 @@
                 <label class="col-sm-2 control-label">Complemento</label>
                 <div class="col-sm-10">
                     <input type="text" name="complemento" class="form-control" id="localidade"
-                           placeholder="Bairro">
+                           placeholder="Complemento">
                 </div>
             </div>
             <div class="form-group">
@@ -55,23 +55,23 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 control-label">Celular (Waths)</label>
+                <label class="col-sm-2 control-label">Celular (Whats)</label>
                 <div class="col-sm-10">
                     <input type="text" name="celular" class="form-control phone" id="celular"
                            placeholder="Celular">
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 control-label">Contato 2</label>
+                <label class="col-sm-2 control-label">Contato</label>
                 <div class="col-sm-10">
-                    <input type="text" name="contato2" class="form-control" id="contato2"
-                           placeholder="Contato 2">
+                    <input type="text" name="contato" class="form-control" id="contato"
+                           placeholder="Contato">
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 control-label">E-MAIL</label>
+                <label class="col-sm-2 control-label">E-mail</label>
                 <div class="col-sm-10">
-                    <input type="text" name="email" class="form-control" id="email" placeholder="E-MAIL">
+                    <input type="text" name="email" class="form-control" id="email" placeholder="E-mail">
                 </div>
             </div>
             <div class="form-group">

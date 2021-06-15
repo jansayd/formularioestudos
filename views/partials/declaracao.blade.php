@@ -1,6 +1,6 @@
 <div role="tabpanel" class="tab-pane" id="declaracao">
     <div style="padding-top:20px;">
-        <form class="form-horizontal" action="" method="POST">
+        <form class="form-horizontal" id="frm-declaracao" action="">
             <div class="form-group">
                 <label class="col-sm-2 control-label">Data de Nascimento</label>
                 <div class="col-sm-10">
@@ -51,7 +51,7 @@
             <div class="form-group">
                 <label class="col-sm-2 control-label">Renda</label>
                 <div class="col-sm-10">
-                    <input type="text" name='renda' class="form-control" id="renda"
+                    <input type="text" name='renda' class="form-control currency" id="renda"
                            placeholder="Renda Mensal R$">
                 </div>
             </div>
