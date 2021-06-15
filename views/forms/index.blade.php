@@ -34,8 +34,26 @@
                 let status = evt.target.value === 'N' ? true : false;
                 $('#tipodeficiente').prop('disabled', status)
             });
+
+            $('#btn_open_form_adicao_dependentes').on('click', function () {
+                $('#ModalFileUpload').modal('show');
+            });
+            getDependentes();
         });
 
+
+        function getDependentes() {
+            $.ajax({
+                type: "GET",
+                url: "../ajax/ajax.php?action=get-dependentes",
+                dataType: 'json',
+                success: function (ret) {
+                    console.log(ret);
+                    if (ret.success) {
+                    }
+                },
+            });
+        }
 
         function getCep(cep) {
             cep = cep.replace(/\D/g, '');
