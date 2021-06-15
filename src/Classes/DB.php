@@ -5,6 +5,10 @@ namespace App\Classes;
 use PDO;
 use PDOException;
 
+/**
+ * Class DB
+ * @package App\Classes
+ */
 class DB
 {
     private static $objInstance;

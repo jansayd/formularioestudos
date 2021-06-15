@@ -2,6 +2,10 @@
 
 namespace App\Classes;
 
+/**
+ * Class Erros
+ * @package App\Classes
+ */
 class Erros
 {
     private $errors = [];

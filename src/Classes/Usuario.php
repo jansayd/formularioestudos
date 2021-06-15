@@ -4,6 +4,10 @@ namespace App\Classes;
 
 use PDO;
 
+/**
+ * Class Usuario
+ * @package App\Classes
+ */
 class Usuario
 {
     public $id;
@@ -94,6 +98,9 @@ class Usuario
         return $stmt->fetch();
     }
 
+    /**
+     * @return string
+     */
     public function registrationMessage()
     {
         return $this->errors->toString();
@@ -104,15 +111,21 @@ class Usuario
      */
     public function saveDataToSession()
     {
-        $_SESSION['id']      = $this->id;
-        $_SESSION['nome']    = $this->nome;
-        $_SESSION['email']   = $this->email;
-        $_SESSION['usuario'] = $this->usuario;
-        $_SESSION['logado']  = true;
+        $_SESSION['id']          = $this->id;
+        $_SESSION['nome']        = $this->nome;
+        $_SESSION['email']       = $this->email;
+        $_SESSION['usuario']     = $this->usuario;
+        $_SESSION['logado']      = true;
+        $_SESSION['control_aba'] = 0;
 
         return true;
     }
 
+    /**
+     * @param $usuario
+     * @param $senha
+     * @return bool
+     */
     public function login($usuario, $senha)
     {
         $sql  = "select * from usuarios where usuario = :usuario and senha = :senha";
